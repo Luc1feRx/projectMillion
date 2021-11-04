@@ -42,6 +42,12 @@
             return $result;
         }
 
+		public function show_brand(){
+			$query = "SELECT * FROM brand order by id desc";
+			$result = $this->db->select($query);
+			return $result;
+		}
+
         public function update_brand($data, $id){
             
             $brandName = mysqli_real_escape_string($this->db->connect, $data['brandName']);

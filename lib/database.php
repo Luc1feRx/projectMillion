@@ -37,6 +37,7 @@
             }
           }
 
+
           //insert data
           public function Insert($sql){
             $insert = mysqli_query($this->connect, $sql) or

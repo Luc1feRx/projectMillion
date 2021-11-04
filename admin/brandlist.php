@@ -50,8 +50,8 @@
                                 <tr>
                                 <th scope="row"><?php echo $index ?></th>
                                 <td><?php echo $name ?></td>
-                                <td><img src="./uploads/<?=$result['img']?>" alt=" <?php echo $result['name'] ?>"></td>
-                                <td><a href="brandupdate.php?id=<?php echo $id ?>" class="btn btn-warning"><i class="fad fa-edit"></i></a> || <a onclick = "return confirm('Bạn có muốn xóa không?')" href="?deleteid=<?php echo $id ?>" class="btn btn-danger"><i class="fad fa-trash"></i></a></td>
+                                <td><img src="./uploads/<?=$result['img']?>" style="max-height: 100px; margin-top: 5px; margin-bottom: 15px;" alt=" <?php echo $result['name'] ?>"></td>
+                                <td><a href="brandupdate.php?id=<?php echo $id ?>" class="btn btn-warning"><i class="far fa-pen-square"></i></a> || <a onclick = "return confirm('Bạn có muốn xóa không?')" href="?deleteid=<?php echo $id ?>" class="btn btn-danger"><i class="fad fa-trash"></i></a></td>
                                 </tr>
                             <?php 
                             }

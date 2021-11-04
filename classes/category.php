@@ -43,6 +43,12 @@
             return $result;
         }
 
+        public function show_category(){
+			$query = "SELECT * FROM category order by id desc";
+			$result = $this->db->select($query);
+			return $result;
+		}
+
         public function update_category($cateName, $id){
             $cateName = $this->format->validation($cateName);
 
