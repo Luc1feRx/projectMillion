@@ -32,6 +32,7 @@
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
   
   <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.15.4/css/pro.min.css">
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">

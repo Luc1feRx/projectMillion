@@ -7,13 +7,11 @@
     include_once ($filepath.'/../lib/upload.php'); ?>
 
 <?php
-    if (isset($_FILES['file']) && isset($_POST['submit'])){
+    if (isset($_FILES['file']) && isset($_FILES['image']) && isset($_POST['submit'])){
         $products = new product();
         $upload = new upload();
         if ($upload->uploads()) {
-            $image = $upload->getRealpath();
             $file = $upload->getRealpath();
-            $_POST['image'] = $image;
             $_POST['file'] = $file;
             $insertProduct = $products->insert_product($_POST);
         }
@@ -29,6 +27,7 @@
             <?php
                 if(isset($insertProduct)){
                     echo $insertProduct;
+                    unset($insertProduct);
                 }
             ?>
             <div class="panel panel-primary">
@@ -42,31 +41,9 @@
                           <input type="text" name="productName" placeholder="Enter Product Name..." class="medium" style="width: 100%;" />
                         </div>
 
-                        <!-- Nội dung -->
-                        <div class="form-group">
-                            <label class="m-1">Danh Mục</label>
-                            <select id="select" name="cate_id[]" style="width: 100%;">
-                            <option>--------Select Category--------</option>
-                            <?php
-                            $cat = new category();
-                            $catlist = $cat->show_category();
-
-                            if($catlist){
-                                while($result = $catlist->fetch_assoc()){
-                             ?>
-
-                            <option value="<?php echo $result['id'] ?>"><?php echo $result['name'] ?></option>
-
-                               <?php
-                                  }
-                              }
-                           ?>
-                        </select>
-                        </div>   
-
                         <div class="form-group">
                         <label class="m-1">Danh Mục</label>
-                            <select id="select" name="cate_id[]" style="width: 100%;">
+                            <select id="select" name="cate_id" style="width: 100%;">
                             <option>--------Select Category--------</option>
                             <?php
                             $cat = new category();
@@ -108,9 +85,9 @@
                         </select>
                         </div>
 
-                        <div class="form-group d-flex justify-middle">
+                        <div class="form-group">
                             <label class="m-1">Mô Tả</label>
-                            <textarea cols="50" rows="10" name="short_desc" class="tinymce" style="width: 100%;"></textarea>
+                            <textarea id="ckeditor" cols="50" rows="10" name="short_desc" style="width: 100%;"></textarea>
                         </div>
 
                         <div class="form-group">
@@ -121,13 +98,18 @@
 
                         <div class="form-group">
                             <label class="m-1">Hình Ảnh</label>
-                            <input type="file" name="image[]" style="width: 100%;" multiple required/>
+                            <input type="file" name="image" style="width: 100%;" required/>
                         </div>
 
 
                         <div class="form-group">
                             <label class="m-1">Tình Trạng Máy</label>
-                            <input type="number" min="0" max="1" value="" style="width: 100%;"name="status" placeholder="1 là mới, 0 là cũ" required>
+                            <select id="select" name="status" style="width: 100%;">
+                            <option>--------Select Status-------</option>
+                            <option value="1">Mới</option>
+                            <option value="0">Cũ</option>
+                            </select>
+                            <!-- <input type="number" min="0" max="1" value="" style="width: 100%;"name="status" placeholder="1 là mới, 0 là cũ" required> -->
                         </div>
 
                         <div class="form-group">
@@ -141,6 +123,11 @@
                         </div>
 
                         <div class="form-group">
+                            <label class="m-1">RAM</label>
+                            <input type="text" name="ram" style="width: 100%;" required>
+                        </div>
+
+                        <div class="form-group">
                             <input type="submit" name="submit" class="btn btn-primary" value="Thêm Sản Phẩm"/>
                         </div>
                       </div>
@@ -149,10 +136,6 @@
                       <div class="col-md-6 col-12">
                         <div class="form-group">
 
-                        <div class="form-group">
-                            <label class="m-1">RAM</label>
-                            <input type="text" name="ram" style="width: 100%;" required>
-                        </div>
                         <div class="form-group">
                             <label class="m-1">Card màn hình</label>
                             <input type="text" name="card" style="width: 100%;" required>
@@ -169,7 +152,12 @@
 
                         <div class="form-group">
                             <label class="m-1">Vân Tay</label>
-                            <input type="number" min="0" max="1" value="" style="width: 100%;"name="vantay" placeholder="1 là có, 0 là không" required>
+                            <select id="select" name="vantay" style="width: 100%;">
+                            <option>--------Select Fingerprint-------</option>
+                            <option value="1">Có</option>
+                            <option value="0">Không</option>
+                            </select>
+                            <!-- <input type="number" min="0" max="1" value="" style="width: 100%;"name="vantay" placeholder="1 là có, 0 là không" required> -->
                         </div>
 
                         <div class="form-group">
@@ -204,9 +192,9 @@
 
                         <div class="form-group">
                             <label class="m-1">Tiêu Đề</label>
-                            <input type="file" name="file[]" style="width: 100%;">
                             <input type="text" name="title" placeholder="Nhập Tiêu Đề">
-                            <textarea name="content" cols="50" rows="10" placeholder="Nhập Nội Dung"></textarea>
+                            <input type="file" name="file" style="width: 100%;">
+                            <textarea name="content" style="width: 100%;" cols="50" rows="10" placeholder="Nhập Nội Dung"></textarea>
                         </div>
 
                       </div>
@@ -218,16 +206,6 @@
         </div>
     </div>
 </div>
-    <!-- Load TinyMCE -->
-<script src="js/tiny-mce/jquery.tinymce.js" type="text/javascript"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        setupTinyMCE();
-        setDatePicker('date-picker');
-        $('input[type="checkbox"]').fancybutton();
-        $('input[type="radio"]').fancybutton();
-    });
-</script>
 </body>
 
 <?php include 'commons/footer.php';?>

@@ -44,7 +44,7 @@
         }
 
         public function show_category(){
-			$query = "SELECT * FROM category order by id desc";
+			$query = "SELECT * FROM category";
 			$result = $this->db->select($query);
 			return $result;
 		}

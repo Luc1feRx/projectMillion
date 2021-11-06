@@ -81,7 +81,7 @@
         }
 
         public function getbrandbyId($id){
-			$query = "SELECT * FROM brand where id = '$id'";
+			$query = "SELECT name FROM brand where id = '$id'";
 			$result = $this->db->select($query);
 			return $result;
 		}

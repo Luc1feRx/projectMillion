@@ -89,13 +89,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/forms/general.html" class="nav-link">
+                <a href="/SellLaptops/admin/productsadd.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm Sản Phẩm</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/forms/advanced.html" class="nav-link">
+                <a href="/SellLaptops/admin/productslist.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh Sách Sản Phẩm</p>
                 </a>
@@ -106,27 +106,84 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Tables
+                Quản Lý Slider
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
+                <a href="/SellLaptops/admin/slideradd.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Simple Tables</p>
+                  <p>Thêm Slide</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
+                <a href="/SellLaptops/admin/sliderlist.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>DataTables</p>
+                  <p>Danh Sách Slide</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Quản Lý Nhân Viên
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/SellLaptops/admin/slideradd.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm Nhân Viên</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/jsgrid.html" class="nav-link">
+                <a href="/SellLaptops/admin/sliderlist.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>jsGrid</p>
+                  <p>Danh Sách Nhân Viên</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Quản Lý Kho
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/SellLaptops/admin/slideradd.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm Sản Phẩm</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/SellLaptops/admin/sliderlist.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh Sách Sản Phẩm</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Quản Lý Đơn Hàng
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/SellLaptops/admin/sliderlist.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh Sách Đơn Hàng</p>
                 </a>
               </li>
             </ul>

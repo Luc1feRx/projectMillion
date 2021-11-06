@@ -15,6 +15,10 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
+<script src="ckeditor/ckeditor.js"></script>
+<script>
+        CKEDITOR.replace('ckeditor');
+</script>
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
