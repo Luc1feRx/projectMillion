@@ -36,55 +36,55 @@
 			}
         }
 
-        // public function show_list_brand(){
-        //     $sql = "select * from brand order by id desc";
-        //     $result = $this->db->Select($sql);
-        //     return $result;
-        // }
+        public function show_list_slider(){
+            $sql = "select * from slider order by id desc";
+            $result = $this->db->Select($sql);
+            return $result;
+        }
 
-		// public function show_brand(){
-		// 	$query = "SELECT * FROM brand order by id desc";
-		// 	$result = $this->db->select($query);
-		// 	return $result;
-		// }
+		public function show_slider(){
+			$query = "SELECT * FROM slider order by id desc";
+			$result = $this->db->select($query);
+			return $result;
+		}
 
-        // public function update_brand($data, $id){
+        public function update_slider($data, $id){
             
-        //     $brandName = mysqli_real_escape_string($this->db->connect, $data['brandName']);
-        //     $img = mysqli_real_escape_string($this->db->connect, $data['file']);
-		// 	if($brandName=="" || $img ==""){
-		// 		$alert = "<span class='error'>Fields must be not empty</span>";
-		// 		return $alert;
-		// 	}else{
-		// 		$query = "UPDATE brand SET name = '$brandName', img = '$img' WHERE id = '$id'";
-		// 		$result = $this->db->insert($query);
-		// 		if($result){
-		// 			$alert = "<span class='success'>Update Brand Successfully</span>";
-		// 			return $alert;
-		// 		}else{
-		// 			$alert = "<span class='error'>Update Brand Not Success</span>";
-		// 			return $alert;
-		// 		}
-		// 	}
-        // }
+            $sliderName = mysqli_real_escape_string($this->db->connect, $data['sliderName']);
+            $img = mysqli_real_escape_string($this->db->connect, $data['file']);
+			if($sliderName=="" || $img ==""){
+				$alert = "<span class='error'>Fields must be not empty</span>";
+				return $alert;
+			}else{
+				$query = "UPDATE slider SET name = '$sliderName', img = '$img' WHERE id = '$id'";
+				$result = $this->db->insert($query);
+				if($result){
+					$alert = "<span class='success'>Update Slider Successfully</span>";
+					return $alert;
+				}else{
+					$alert = "<span class='error'>Update Slider Not Success</span>";
+					return $alert;
+				}
+			}
+        }
 
-        // public function delete_brand($id){
-        //     $sql = "DELETE FROM brand WHERE id = '$id'";
-        //         $result = $this->db->Delete($sql);
-        //         if($result){
-        //             $alert = "<div class='success'>Delete Successfully!!</div>";
-        //             return $alert;
-        //         }else{
-        //             $alert = "<div class='error'>Failed to Delete brand!!</div>";
-        //             return $alert;
-        //         }
-        // }
+        public function delete_slider($id){
+            $sql = "DELETE FROM slider WHERE id = '$id'";
+                $result = $this->db->Delete($sql);
+                if($result){
+                    $alert = "<div class='success'>Delete Successfully!!</div>";
+                    return $alert;
+                }else{
+                    $alert = "<div class='error'>Failed to Delete slider!!</div>";
+                    return $alert;
+                }
+        }
 
-        // public function getbrandbyId($id){
-		// 	$query = "SELECT name FROM brand where id = '$id'";
-		// 	$result = $this->db->select($query);
-		// 	return $result;
-		// }
+        public function getSliderbyId($id){
+			$query = "SELECT name, img FROM slider where id = '$id'";
+			$result = $this->db->select($query);
+			return $result;
+		}
     }
     
 ?>

@@ -87,6 +87,12 @@
 			$result = $this->db->select($query);
 			return $result;
 		}
+
+        public function getCatesByProductId($id){
+            $query = "SELECT c.id, c.name FROM category c inner join product p on c.id = p.cate_id where p.id = '$id'";
+			$result = $this->db->select($query);
+			return $result;
+        }
     }
     
 ?>

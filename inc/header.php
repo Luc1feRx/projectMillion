@@ -11,17 +11,6 @@
     // }
 ?>
 
-<?php
-    include_once 'lib/database.php';
-    include_once 'helpers/format.php';
-    spl_autoload_register(function($class){
-      include_once "classes/".$class.".php";
-    });
-
-    $db = new Database();
-    $fm = new Format();
-    $ct = new cart();
-?>
 
 <!DOCTYPE html>
 <html lang="en">

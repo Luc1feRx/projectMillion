@@ -129,7 +129,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Quản Lý Nhân Viên
+                Quản Lý Người Dùng
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -137,40 +137,18 @@
               <li class="nav-item">
                 <a href="/SellLaptops/admin/slideradd.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Thêm Nhân Viên</p>
+                  <p>Thêm Người Dùng</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="/SellLaptops/admin/sliderlist.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Danh Sách Nhân Viên</p>
+                  <p>Danh Sách Người Dùng</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Quản Lý Kho
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/SellLaptops/admin/slideradd.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Thêm Sản Phẩm</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/SellLaptops/admin/sliderlist.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Danh Sách Sản Phẩm</p>
-                </a>
-              </li>
-            </ul>
-          </li>
+          
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>

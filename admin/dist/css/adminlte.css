@@ -12781,6 +12781,8 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 .outer{
   position: relative;
   /* margin: 0 50px; */
+  display: block;
+  list-style: none;
 }
 .button{
   height: 70px;
@@ -12808,6 +12810,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
   letter-spacing: 1px;
   text-transform: uppercase;
   cursor: pointer;
+  margin: 0;
 }
 .button button{
   height: 60px;

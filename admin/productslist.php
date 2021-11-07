@@ -87,12 +87,9 @@
 
                     <tbody id="myTable">
                             <?php
-                                $products = new product();
-                                $show_products = $products->show_products();
-                                if($show_products == true){
-                                    $index = 0;
-                                    while ($result = $show_products->fetch_assoc()){
-                                        $index++;
+                            $index=0;
+                                foreach ($list as $result) {
+                                    $index++;
                             ?>
                         <tr>
                             <td><?php echo $index ?></td>
@@ -126,10 +123,10 @@
                         </tr>
                         <?php 
                             }
-                        }
-                            ?>
+                        ?>
                     </tbody>
                 </table>
+                <div class="d-flex">
                 <?php
                 //tinh tổng số bản ghi
                 $db = new Database();
@@ -140,13 +137,13 @@
                 $page = ceil($allRows / $count); //11/5 = 2.2 xấp xỉ 3 -> 2 trang
                 for ($i = 0; $i < $page; $i++) {
                     $pageCount = $i + 1;
-                    echo '<div class="outer circle">
+                    // echo ' <button> <a href="?page=' . $pageCount . '">' . $pageCount . '</a></button>';
+                    echo '<li class="outer circle">
                     <button><a class="" href="?page=' . $pageCount . '">' . $pageCount . '</a></button>
-                    <span></span>
-                    <span></span>
-                    </div>';
+                    </li>';
                 }
                 ?>
+                </div>
             </div>
         </div>
 

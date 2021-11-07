@@ -22,7 +22,7 @@
             $cate_id = mysqli_real_escape_string($this->db->connect, $data['cate_id']);
             $brand_id = mysqli_real_escape_string($this->db->connect, $data['brand_id']);
             $short_desc = mysqli_real_escape_string($this->db->connect, $data['short_desc']);
-            $status = mysqli_real_escape_string($this->db->connect, $data['status']);
+            $status = $data['status'];
             $model = mysqli_real_escape_string($this->db->connect, $data['model']);
             $chip = mysqli_real_escape_string($this->db->connect, $data['chip']);
             $ram = mysqli_real_escape_string($this->db->connect, $data['ram']);
@@ -95,7 +95,7 @@
 		}
 
         public function getProductLimit($offset, $count){
-			$query = "SELECT * FROM product order by id desc";
+			$query = "SELECT * FROM product LIMIT $offset,$count";
 			$result = $this->db->Select($query);
 			return $result;
 		}
@@ -207,7 +207,7 @@
 			return $result;
 		}
 
-        public function getContentProduct($id){
+        public function getContentProducts($id){
 			$query = "SELECT * FROM product_details WHERE product_id = '$id'";
 			$result = $this->db->Select($query);
 			return $result;
@@ -218,6 +218,32 @@
 			$result = $this->db->Select($query);
 			return $result;
         }
+
+        function getTopSell(){
+            $query = "SELECT * FROM product WHERE 1 ORDER BY selled DESC LIMIT 5";
+			$result = $this->db->Select($query);
+			return $result;
+        }
+
+        function getTopNew(){
+            $query = "SELECT * FROM product WHERE 1 ORDER BY time_add DESC LIMIT 5";
+			$result = $this->db->Select($query);
+			return $result;
+        }
+
+        function getListBySearch($keyword){
+            $query = "SELECT * FROM product WHERE name LIKE '%$keyword%' ORDER BY name";
+			$result = $this->db->Select($query);
+			return $result;
+        }
+
+        function getProductById($id){
+            $query = "SELECT * FROM product WHERE id= $id";
+			$result = $this->db->Select($query);
+			return $result;
+        }
+
+ 
     }
     
 ?>
