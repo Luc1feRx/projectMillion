@@ -29,7 +29,7 @@
                 $alert = "<div class='error'>Username or password not empty!!</div>";
                 return $alert;
             }else{
-                $sql = "select * from admin where username='$username' and password='$password' limit 1";
+                $sql = "select * from account where username='$username' and password='$password' limit 1";
                 $result = $this->db->Select($sql);
                 if($result != false){
                     $row = $result->fetch_assoc();
@@ -62,8 +62,8 @@
                 $alert = "<div class='error'>Vui lòng điền đầy đủ thông tin!!</div>";
                 return $alert;
             }else if($password == $passwordR){
-                $userExist = $this->db->Select("SELECT * FROM admin WHERE username='{$username}'");
-                $emailExist = $this->db->Select("SELECT * FROM admin WHERE email='{$email}'");
+                $userExist = $this->db->Select("SELECT * FROM account WHERE username='{$username}'");
+                $emailExist = $this->db->Select("SELECT * FROM account WHERE email='{$email}'");
                 if($userExist){
                     $alert = "<span class='error'>Username đã tồn tại, vui lòng nhập username khác</span>";
                     return $alert;
@@ -71,7 +71,7 @@
                     $alert = "<span class='error'>Email đã tồn tại, vui lòng nhập Email khác</span>";
                     return $alert;
                 }else{
-                    $sql = "INSERT INTO admin(username, password, email) VALUES('$username', '$password', '$email')";
+                    $sql = "INSERT INTO account (username, password, email) VALUES('$username', '$password', '$email')";
                     $result = $this->db->Insert($sql);
                     if($result){
                         $alert = "<span class='success'>Thêm Tài Khoản Thành Công</span>";

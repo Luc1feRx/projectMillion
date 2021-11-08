@@ -92,13 +92,13 @@
 
                         <div class="form-group">
                             <label class="m-1">Giá Cả</label>
-                            <input type="text" name="price" placeholder="Enter Price..." class="medium" style="width: 100%;"/>
+                            <input type="text" name="price" placeholder="Enter Price..." class="medium" style="width: 100%;" onchange="updateThumbnail()"/>
                         </div>
 
 
                         <div class="form-group">
                             <label class="m-1">Hình Ảnh</label>
-                            <input type="file" name="image" style="width: 100%;" required/>
+                            <input type="file" id="thumbnail" name="image" style="width: 100%;" required/>
                         </div>
 
 
@@ -206,6 +206,10 @@
         </div>
     </div>
 </div>
+<script>
+
+</script>
+
 </body>
 
 <?php include 'commons/footer.php';?>

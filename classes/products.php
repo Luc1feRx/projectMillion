@@ -58,8 +58,7 @@
                 if(!empty($file_name)){
                     //Nếu người dùng chọn ảnh
                     if (in_array($file_ext, $permited) === false) 
-                    {
-                     // echo "<span class='error'>You can upload only:-".implode(', ', $permited)."</span>";	
+                    {	
                     $alert = "<span class='success'>You can upload only:-".implode(', ', $permited)."</span>";
                     return $alert;
                     }

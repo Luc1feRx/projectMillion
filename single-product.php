@@ -166,18 +166,18 @@ include_once ("classes/category.php");
 			
 			
 			
-			<div class="col-md-8">
+			<div class="col-md-12">
 			<h5>Bình luận sản phẩm</h5>
                 <?php
-                if(isset($binhluan_insert)){
-                    echo $binhluan_insert;
-                } 
+                // if(isset($binhluan_insert)){
+                //     echo $binhluan_insert;
+                // } 
                 ?>
-                <form action="" method="POST">
-                    <p><input type="hidden" value="<?php echo $id ?>" name="product_id_binhluan"></p>
-                    <p><input type="text" placeholder="Điền tên" class="form-control" name="tennguoibinhluan"></p>
-                    <p><textarea rows="5" style="resize: none;" placeholder="Bình luận...." class="form-control" name="binhluan"></textarea></p>
-                    <p><input type="submit" name="binhluan_submit" class="btn btn-success" value="Gửi bình luận"></p>
+                <form action="" style="width: 100%;" method="POST">
+                    <p><input type="hidden" style="width: 100%;" value="<?php echo $id ?>" name="product_id_binhluan"></p>
+                    <p><input type="text" style="width: 100%;" placeholder="Điền tên" class="form-control" name="tennguoibinhluan"></p>
+                    <p><textarea rows="5" style="width: 100%;" style="resize: none;" placeholder="Bình luận...." class="form-control" name="binhluan"></textarea></p>
+                    <p><input type="submit" style="width: 100%;" name="binhluan_submit" class="btn btn-success" value="Gửi bình luận"></p>
                 </form>
             </div>
             </div>

@@ -5,6 +5,13 @@
     $get_slider = $slider->show_list_slider();
 ?>
 
+<style type="text/css">
+	.bx-controls-direction{
+		transform: translateX(-43px) translateY(-300px);
+    	width: 1227px;
+	}
+</style>
+
 <div class="slider-area">
         	<!-- Slider -->
 			<div class="block-slider block-slider4">
@@ -21,6 +28,7 @@
 						</div> -->
 					</li>
                     <?php endforeach;?>
+
 
 				</ul>
 			</div> 
