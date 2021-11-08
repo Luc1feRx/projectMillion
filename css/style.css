@@ -9,6 +9,27 @@
     width: fit-content;
 }
 
+.rightsidebar{
+	display: block;
+	float:left;
+	margin: 0% 1.6% 10% 1.6%;
+}
+
+
+.rightsidebar ul{
+    list-style: none;
+    padding: 0;
+}
+
+.rightsidebar ul li a{
+    text-decoration: none;
+    margin-left: 6px;
+}
+
+
+
+
+
 .slider-next {
   position: absolute;
   top: 50%;
@@ -986,12 +1007,79 @@ input[type="submit"]:hover, button[type=submit]:hover {background-color: #222}
     padding: 0;
 }
 .single-sidebar li {
-    border-bottom: 1px solid #f1f1f1;
+    border-bottom: 2px solid #f1f1f1;
     padding: 10px 0;
+}
+
+form {
+  flex: 1;
+}
+
+input[type=checkbox] {
+  position: absolute;
+  visibility: hidden;
+  width: 60px;
+  height: 60px;
+  z-index: 2;
+}
+
+.checkbox {
+  position: relative;
+}
+
+label {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: #efefef;
+  border: 10px solid #aaaaaa;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+input[type=checkbox]:checked + label {
+  border: 10px solid #3d9970;
+  animation: confirm 0.15s linear;
+}
+
+input[type=checkbox]:checked + label:after {
+  content: "";
+  font-family: FontAwesome;
+  font-size: 35px;
+  line-height: 50px;
+  width: 50px;
+  height: 50px;
+  background: #2ECC40;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #ffffff;
+}
+
+@keyframes confirm {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  75% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.single-sidebar > .item:hover{
+    color: white !important;
+    background-color: #5a88ca;
 }
 .single-sidebar a {
     display: block;
 }
+
 .product-breadcroumb {
     margin-bottom: 20px;
 }

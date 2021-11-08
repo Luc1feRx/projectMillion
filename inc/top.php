@@ -103,9 +103,9 @@ include 'classes/products.php';
                     
                     <div class="header-cart">
                         <div class="shopping-item">
-                        <a href="cart.php">Cart - <span class="cart-amunt"><?php echo number_format($total) . ' đ'; ?></span>
+                        <!-- <a href="cart.php">Cart - <span class="cart-amunt"><?php echo number_format($total) . ' đ'; ?></span>
                             <i class="fa fa-shopping-cart"></i> <span class="product-count"><?php echo count($cart); ?></span></a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

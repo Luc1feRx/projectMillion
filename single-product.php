@@ -32,9 +32,7 @@ include_once ("classes/category.php");
     <div class="zigzag-bottom"></div>
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
                 <?php include_once('singleSidebar.php') ?>
-            </div>
             <!-- ./ end sidebar -->
             <!-- MAin details -->
             <div class="col-md-8">

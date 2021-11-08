@@ -34,6 +34,12 @@ if (isset($_GET['cate']) && is_numeric($_GET['cate'])) {
     <div class="zigzag-bottom"></div>
     <div class="container">
         <div class="row">
+        <form action="">
+            <div class="checkbox">
+            <input id="check" name="check" type="checkbox" />
+            <label for="check"></label>
+            </div>
+        </form>
             <?php foreach ($list as $product) { ?>
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">

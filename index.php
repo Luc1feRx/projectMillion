@@ -13,6 +13,4 @@
     <!-- product widget area -->
     <?php include_once 'widget.php'; ?>
 
-<?php
-    include ('inc/footer.php');
-?>
+<?php include ('inc/footer.php');?>
