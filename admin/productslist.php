@@ -27,6 +27,7 @@
 ?>
 
 
+
 <style>
     table.dataTable thead .sorting:after,
     table.dataTable thead .sorting:before,
@@ -64,6 +65,20 @@
                     header("location: productslist.php");
                 }
             ?>
+            </br> </br>
+            <form action="search.php" method="GET">
+
+            <div class="row">
+                <div class="col-md-11">
+                    <input required class="form-control" type="text" name="search" placeholder="Nhập thông tin cần tìm kiếm ...">
+                </div>
+                <div class="col-md-1">
+                    <button type="submit" style="width: 100%;" class="btn btn-dark"><i class="fas fa-search"></i></button>
+                </div>
+
+            </div>
+            </form>
+            </br> </br>
 
             <a href="productsadd.php" class="btn btn-primary">Thêm Sản Phẩm</a>
             </br> </br>
@@ -84,7 +99,6 @@
                             <th onclick="sortTable()" class="th-sm" scope="col">Thao tác</th>
                         </tr>
                     </thead>
-
                     <tbody id="myTable">
                             <?php
                             $index=0;

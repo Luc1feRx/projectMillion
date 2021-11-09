@@ -242,6 +242,12 @@
 			return $result;
         }
 
+        function SearchProductByKeyWord($KeyWord){
+            $query = "SELECT * FROM product WHERE name LIKE N'%". $KeyWord . "%'";
+            $result = $this->db->Select($query);
+			return $result;
+        }
+
  
     }
     

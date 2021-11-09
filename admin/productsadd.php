@@ -97,8 +97,29 @@
 
 
                         <div class="form-group">
-                            <label class="m-1">Hình Ảnh</label>
-                            <input type="file" id="thumbnail" name="image" style="width: 100%;" required/>
+                        <div class="wrapperr">
+                            <div class="imagee">
+                            <img class = "imgg" src="" alt="">
+                            </div>
+                            <div class="content">
+                                <div class="icon">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                </div>
+                                <div class="text">
+                                    No file chosen, yet!
+                                </div>
+                            </div>
+                            <div id="cancell-btn">
+                            <i class="fas fa-times"></i>
+                            </div>
+                            <div class="filee-name">
+                            File name here
+                            </div>
+                            </div>
+                            <button onclick="defaultBtnActive()" id="customr-btn">Choose a file</button>
+                            <input id="defaultr-btn" type="file" name="image" hidden>
+                            <!-- <label class="m-1">Hình Ảnh</label>
+                            <input type="file" id="thumbnail" name="image" style="width: 100%;" required/> -->
                         </div>
 
 
@@ -207,8 +228,37 @@
     </div>
 </div>
 <script>
-
-</script>
+         const wrapper = document.querySelector(".wrapperr");
+         const fileName = document.querySelector(".filee-name");
+         const defaultBtn = document.querySelector("#defaultr-btn");
+         const customBtn = document.querySelector("#customr-btn");
+         const cancelBtn = document.querySelector("#cancell-btn i");
+         const img = document.querySelector(".imgg");
+         let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+         function defaultBtnActive(){
+           defaultBtn.click();
+         }
+         defaultBtn.addEventListener("change", function(){
+           const file = this.files[0];
+           if(file){
+             const reader = new FileReader();
+             reader.onload = function(){
+               const result = reader.result;
+               img.src = result;
+               wrapper.classList.add("active");
+             }
+             cancelBtn.addEventListener("click", function(){
+               img.src = "";
+               wrapper.classList.remove("active");
+             })
+             reader.readAsDataURL(file);
+           }
+           if(this.value){
+             let valueStore = this.value.match(regExp);
+             fileName.textContent = valueStore;
+           }
+         });
+      </script>
 
 </body>
 

@@ -12772,6 +12772,90 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
   }
 }
 
+.wrapperr{
+  position: relative;
+  height: 300px;
+  width: 300px;
+  border-radius: 10px;
+  background: #fff;
+  border: 2px dashed #c2cdda;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.wrapperr.active{
+  border: none;
+}
+.wrapperr .imagee{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapperr .imgg{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.wrapperr .icon{
+  font-size: 100px;
+  color: #9658fe;
+}
+.wrapperr .text{
+  font-size: 20px;
+  font-weight: 500;
+  color: #5B5B7B;
+}
+.wrapperr #cancell-btn i{
+  position: absolute;
+  font-size: 20px;
+  right: 15px;
+  top: 15px;
+  color: #9658fe;
+  cursor: pointer;
+  display: none;
+}
+.wrapperr.active:hover #cancell-btn i{
+  display: block;
+}
+.wrapperr #cancell-btn i:hover{
+  color: #e74c3c;
+}
+.wrapperr .filee-name{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 8px 0;
+  font-size: 18px;
+  color: #fff;
+  display: none;
+  background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);
+}
+.wrapper.active:hover .filee-name{
+  display: block;
+}
+
+#customr-btn{
+  margin-top: 30px;
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);
+}
+
 
 .center{
   display: flex;

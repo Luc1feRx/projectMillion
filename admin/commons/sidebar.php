@@ -209,6 +209,31 @@
               </li>
             </ul>
           </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Quản Lý Quyền
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/SellLaptops/admin/rolesadd.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm Quyền</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="/SellLaptops/admin/roleslist.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh Sách Quyền</p>
+                </a>
+              </li>
+            </ul>
+          </li>
           <!-- <li class="nav-header">EXAMPLES</li>
           <li class="nav-item">
             <a href="pages/calendar.html" class="nav-link">

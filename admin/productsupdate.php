@@ -245,7 +245,7 @@
                         <div class="form-group">
                             <label class="m-1">Tiêu Đề</label>
                             <?php
-                            $getContentProducts = $products->getContentProduct($id);
+                            $getContentProducts = $products->getContentProducts($id);
                             if($getContentProducts){
                                 while($ro = $getContentProducts->fetch_assoc()){
                                 
