@@ -110,7 +110,7 @@
                     $pageCount = $i + 1;
                     // echo ' <button> <a href="?page=' . $pageCount . '">' . $pageCount . '</a></button>';
                     echo '<li class="outer circle">
-                    <button><a class="" href="search.php?page=' . $pageCount . '">' . $pageCount . '</a></button>
+                    <button><a class="" href="?page=' . $pageCount . '">' . $pageCount . '</a></button>
                     </li>';
                 }
                 ?>

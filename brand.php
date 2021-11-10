@@ -14,7 +14,7 @@
                 <div class="brand-wrapper">
                     <div class="brand-list ">
                         <?php foreach ($brands as $item):?>
-                            <a href="http://localhost:85/SellLaptops/search.php?search_key=<?php echo $item['name'] ?>">
+                            <a href="search.php?search_key=<?php echo $item['name'] ?>">
                                 <img src="./admin/uploads/<?=$item['img']?>" alt=" <?php echo $item['name'] ?>"></a>
 
                         <?php endforeach;?>

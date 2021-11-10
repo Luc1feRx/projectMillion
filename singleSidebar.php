@@ -1,5 +1,5 @@
 <?php include_once 'classes/category.php'; ?>
-<?php include_once 'classes/products.php'; ?>
+
 
 <div class="col-md-4">
     <div class="col-sm-11">

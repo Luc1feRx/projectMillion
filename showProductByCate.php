@@ -1,4 +1,4 @@
-<?php include_once 'classes/products.php' ?>
+
 <?php include_once 'classes/category.php' ?>
 
     <!-- main content products -->
@@ -8,9 +8,17 @@
                 <?php 
                     $products = new product();
                     $cate = new category();
+                    $cart = new cart();
                     $cateList = $cate->show_category();
+                    if(isset($_GET['add-to-cart'])){
+                        $id = $_GET['add-to-cart'];
+                        $quantity = 1;
+                        $addtocart = $cart->add_cart($quantity,$id);
+                    }
                     foreach ($cateList as $category){
                 ?>
+
+                
 
                 <?php
                     $listProducts = $products->getListProductByCategory($category['id']);

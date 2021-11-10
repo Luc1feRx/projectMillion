@@ -1,7 +1,6 @@
 <?php
 include_once("inc/header.php");
 include_once("inc/top.php");
-include_once ("classes/products.php");
 include_once ("classes/brand.php");
 include_once ("classes/category.php");
 ?>

@@ -1,14 +1,17 @@
 <?php
-    include_once 'lib/session.php';
+    include 'lib/session.php';
     Session::init();
+?>
+<?php
+	
+	include 'lib/database.php';
+	include 'helpers/format.php';
 
-    // $_SESSION['title'] = 'Shop Laptop';
-    // $actual_link = $_SERVER['PHP_SELF'];
-    // switch($actual_link){
-    //     case '/localhost/FrontEnd/index.php':
-    //     $_SESSION['title'] = 'Shop Laptop ';
-    //     break;
-    // }
+  include_once 'classes/category.php';
+  include_once 'classes/products.php';
+  include_once 'classes/brand.php';
+  include_once 'classes/cart.php'; 	 	
+  $fm = new Format();
 ?>
 
 

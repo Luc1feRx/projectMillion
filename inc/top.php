@@ -1,61 +1,17 @@
-
 <?php
-include 'classes/products.php';
-//cart in session
-// unset($_SESSION['cart']);
-// if (isset($_GET['add-to-cart'])) {
-//     $id = $_GET['add-to-cart'];
-//     if (isset($_SESSION['cart'])) {
-//         $cart = $_SESSION['cart'];
-//         $flag = false;
-//         //tăng số luợng sp nếu đã có sp này trong giỏ hàng
-//         for ($i = 0; $i < count($cart); $i++) {
-//             if ($cart[$i]['id'] == $id) {
-//                 $cart[$i]['quantity'] = $cart[$i]['quantity'] + 1;
-//                 $flag = true; //da ton tai mot cai san pham có id như vay trong gio hang
-//                 break;
-//             }
-//         }
+    $cart = new cart();
+    $check_cart = $cart->check_cart();
+		if($check_cart){
+			$sum = Session::get("sum");
+			$qty = Session::get("qty");
+			$total = $fm->format_currency($sum).' '.'VNĐ';
+		}else{
+			$total = 0;
+            $qty = 0;
+		}
+?>
 
-//         // thêm mới sp vào giỏ hàng
-//         if ($flag == false) {
-//             $products = new product();
-//             $product = $products->getProductById($id);
-//             foreach ($product as $items){
-//             $item = array(
-//                 'id' => $items['id'],
-//                 'name' => $items['name'],
-//                 'quantity' => 1,
-//                 'price' => $items['price']
-//             );
-//             array_push($cart, $item);
-//         }
-//         }
-//         $_SESSION['cart'] = $cart;
-//     } else {
-//         // đẩy sp vào giỏ hàng
-//         $products = new product();
-//         $product = $products->getProductById($id);
-//         foreach ($product as $items){
-//             $item = array(
-//                 'id' => $items['id'],
-//                 'name' => $items['name'],
-//                 'quantity' => 1,
-//                 'price' => $items['price']
-//             );
-//         }
-//         $cart = array($item);
-//         $_SESSION['cart'] = $cart;
-//     }
-//     //  var_dump($_SESSION['cart']);
-//     $cart = $_SESSION['cart'];
-// }
 
-// $total = 0;
-// foreach ($cart as $item) {
-//     $total += $item['price'] * $item['quantity'];
-// }
-// ?>
 
  <!-- Header area -->
  <div class="header-area">
@@ -68,15 +24,6 @@ include 'classes/products.php';
                             <li><a href="#"><i class="fa fa-heart"></i> Danh Sách Mong Muốn</a></li>
                             <li><a href="cart.html"><i class="fa fa-user"></i> Giỏ Hàng</a></li>
                             <li><a href="checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="header-right">
-                        <ul class="list-unstyled list-inline">
-                            <li><a href="#"><i class="fa fa-user"></i> Đăng Nhập</a></li>
-                            <li><a href="#"><i class="fa fa-user"></i> Đăng Ký</a></li>
                         </ul>
                     </div>
                 </div>
@@ -103,9 +50,9 @@ include 'classes/products.php';
                     
                     <div class="header-cart">
                         <div class="shopping-item">
-                        <!-- <a href="cart.php">Cart - <span class="cart-amunt"><?php echo number_format($total) . ' đ'; ?></span>
-                            <i class="fa fa-shopping-cart"></i> <span class="product-count"><?php echo count($cart); ?></span></a>
-                        </div> -->
+                        <a href="cart.php">Cart - <span class="cart-amunt"><?php echo $total ?></span>
+                            <i class="fa fa-shopping-cart"></i> <span class="product-count"><?php echo $qty ?></span></a>
+                        </div>
                     </div>
                 </div>
             </div>

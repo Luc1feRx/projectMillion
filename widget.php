@@ -1,4 +1,4 @@
-<?php include_once 'classes/products.php' ?>
+
 <?php
 $product = new product();
 

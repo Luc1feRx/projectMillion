@@ -1,7 +1,6 @@
 <?php
 include_once("inc/header.php");
 include_once("inc/top.php");
-include_once ("classes/products.php");
 include_once ("classes/brand.php");
 include_once ("classes/category.php");
 ?>
@@ -13,6 +12,13 @@ include_once ("classes/category.php");
         $productSingle = $product->getProductById($id);
         $cate = new category();
         $cates = $cate->getCatesByProductId($id);
+    }else if(!isset($_GET['product_id']) || $_GET['product_id']==NULL){
+        echo "<script>window.location = '404.php'</script>";
+    }
+    $cart = new cart();
+    if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add-to-cart'])){
+        $quantity = $_POST['quantity'];
+        $addtocart = $cart->add_to_cart($quantity, $id);
     }
 ?>
 
@@ -72,7 +78,13 @@ include_once ("classes/category.php");
                                     </div>
                                     <button class="add_to_cart_button" name="add-to-cart" value="<?php echo $products['id'] ?>" type="submit">Thêm vào giỏ</button>
                                 </form>
-
+                        </br></br>
+                                <?php
+                                    if(isset($addtocart)){
+                                        echo $addtocart;
+                                    }
+                                ?>	
+                        </br></br>
                                 <div role="tabpanel">
                                     <ul class="product-tab" role="tablist">
                                         <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Chi Tiết</a></li>
