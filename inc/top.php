@@ -2,8 +2,13 @@
     $cart = new cart();
     $check_cart = $cart->check_cart();
 		if($check_cart){
-			$sum = Session::get("sum");
-			$qty = Session::get("qty");
+            if(isset($_GET['add-to-cart'])){
+                $sum = Session::get("sums");
+                $qty = Session::get("qtys");
+            }else{
+                $sum = Session::get("sum");
+                $qty = Session::get("qty");
+            }
 			$total = $fm->format_currency($sum).' '.'VNĐ';
 		}else{
 			$total = 0;

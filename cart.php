@@ -70,11 +70,11 @@ include_once("classes/cart.php");
                                             </td>
 
                                             <td class="product-thumbnail">
-                                                <a href="single-product.php?product_id=<?php echo $result['cartid'] ?>"><img width="145" height="145" alt="<?php $result['productName'] ?>" class="shop_thumbnail" src="<?php echo 'admin/uploads/' . $result['image'] ?>"></a>
+                                                <a href="single-product.php?product_id=<?php echo $result['productId'] ?>"><img width="145" height="145" alt="<?php $result['productName'] ?>" class="shop_thumbnail" src="<?php echo 'admin/uploads/' . $result['image'] ?>"></a>
                                             </td>
 
                                             <td class="product-name">
-                                                <a href="single-product.php?product_id=<?php echo $result['cartid'] ?>"><?php echo $result['productName'] ?></a>
+                                                <a href="single-product.php?product_id=<?php echo $result['productId'] ?>"><?php echo $result['productName'] ?></a>
                                             </td>
 
                                             <td class="product-price ">

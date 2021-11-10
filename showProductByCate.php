@@ -50,6 +50,10 @@
                                         <ins><?php $sellprice = $item['price'] * (100 - $item['discount']) / 100;
                                                 echo number_format($sellprice) . " VNĐ" ?></ins>
                                             <del><?php if ($sellprice != $item['price']) echo number_format($item['price']) . " VNĐ"?></del>
+                                            <?php 
+                                                Session::set('sums',$item['price']);
+                                                Session::set('qtys',$quantity);
+                                            ?>
                                         </div> 
                                     </div>
                                 </div>
