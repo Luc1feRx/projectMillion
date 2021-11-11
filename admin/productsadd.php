@@ -134,6 +134,15 @@
                         </div>
 
                         <div class="form-group">
+                            <input type="submit" name="submit" class="btn btn-primary" value="Thêm Sản Phẩm"/>
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-6 col-12">
+                        <div class="form-group">
+
+                        <div class="form-group">
                             <label class="m-1">Model</label>
                             <input type="text" name="model" style="width: 100%;" required>
                         </div>
@@ -147,16 +156,6 @@
                             <label class="m-1">RAM</label>
                             <input type="text" name="ram" style="width: 100%;" required>
                         </div>
-
-                        <div class="form-group">
-                            <input type="submit" name="submit" class="btn btn-primary" value="Thêm Sản Phẩm"/>
-                        </div>
-                      </div>
-
-
-                      <div class="col-md-6 col-12">
-                        <div class="form-group">
-
                         <div class="form-group">
                             <label class="m-1">Card màn hình</label>
                             <input type="text" name="card" style="width: 100%;" required>
@@ -215,7 +214,7 @@
                             <label class="m-1">Tiêu Đề</label>
                             <input type="text" name="title" placeholder="Nhập Tiêu Đề">
                             <input type="file" name="file" style="width: 100%;">
-                            <textarea name="content" style="width: 100%;" cols="50" rows="10" placeholder="Nhập Nội Dung"></textarea>
+                            <textarea id="ckeditor1" name="content" style="width: 100%;" cols="50" rows="10" placeholder="Nhập Nội Dung"></textarea>
                         </div>
 
                       </div>

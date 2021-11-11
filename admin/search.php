@@ -15,6 +15,11 @@
                 }
                 $count = 10;
                 $offset = ($page - 1) * $count;
+
+                if(isset($_GET['deleteid'])){
+                    $id = $_GET['deleteid'];
+                    $deleteproducts = $products->delete_product($id);
+                 }
                 
                 if (isset($_GET['search']) && !empty($_GET['search'])) {
                     $keyword = $_GET['search'];
@@ -29,6 +34,15 @@
     <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
+            </br>
+            <?php
+                if(isset($deleteproducts)){
+                    echo $deleteproducts;
+                    unset($deleteproducts);
+                    header("location: productslist.php");
+                }
+            ?>
+            </br> </br>
             <form action="search.php" method="GET">
 
             <div class="row">
@@ -116,6 +130,8 @@
                 ?>
                 </div>
                 <?php
+                    }else{
+                        echo "<div class='error'>Khong Tim Thay!!</div>";
                     }
                 }
                 ?>
