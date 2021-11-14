@@ -9,6 +9,7 @@
                     $products = new product();
                     $cate = new category();
                     $cart = new cart();
+                    $quantity=0;
                     $cateList = $cate->show_category();
                     if(isset($_GET['add-to-cart'])){
                         $id = $_GET['add-to-cart'];
@@ -51,8 +52,8 @@
                                                 echo number_format($sellprice) . " VNĐ" ?></ins>
                                             <del><?php if ($sellprice != $item['price']) echo number_format($item['price']) . " VNĐ"?></del>
                                             <?php 
-                                                Session::set('sums',$item['price']);
-                                                Session::set('qtys',$quantity);
+                                                Session::set('sumss',$item['price']);
+                                                Session::set('qtyss',$quantity);
                                             ?>
                                         </div> 
                                     </div>

@@ -55,7 +55,7 @@ include_once ("classes/category.php");
                         <?php foreach ($productSingle as $products): ?>
                             <div class="product-images">
                                 <div class="product-main-img">
-                                <img class="mainImg" height="800px" width="1000px" src="./admin/uploads/<?=$products['image']?>" alt="">
+                                <img class="mainImg" height="700px" width="800px" src="./admin/uploads/<?=$products['image']?>" alt="">
 
                                 </div>
                             </div>

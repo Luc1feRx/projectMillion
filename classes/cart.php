@@ -35,8 +35,9 @@
 				$image = $result["image"];
 				$price = $result["price"];
 				$productName = $result["name"];
+				$discount = $result["discount"];
 
-				$query_insert = "INSERT INTO cart(productId,quantity,sessionID,image,price,productName) VALUES('$id','$quantity','$sId','$image','$price','$productName')";
+				$query_insert = "INSERT INTO cart(productId,quantity,sessionID,image,price,productName, discount) VALUES('$id','$quantity','$sId','$image','$price','$productName', '$discount')";
 				$insert_cart = $this->db->Insert($query_insert);
 				if($insert_cart){
 					$msg = "<span class='btn btn-success'>Thêm sản phẩm thành công</span>";
@@ -66,8 +67,9 @@
 				$image = $result["image"];
 				$price = $result["price"];
 				$productName = $result["name"];
+				$discount = $result["discount"];
 
-				$query_insert = "INSERT INTO cart(productId,quantity,sessionID,image,price,productName) VALUES('$id','$quantity','$sId','$image','$price','$productName')";
+				$query_insert = "INSERT INTO cart(productId,quantity,sessionID,image,price,productName, discount) VALUES('$id','$quantity','$sId','$image','$price','$productName', '$discount')";
 				$insert_cart = $this->db->Insert($query_insert);
 				if($insert_cart){
 					$msg = "<span class='btn btn-success'>Thêm sản phẩm thành công</span>";
@@ -122,6 +124,14 @@
 			$query = "SELECT * FROM cart WHERE sessionID = '$sId'";
 			$result = $this->db->select($query);
 			return $result;
+		}
+
+		public function del_all_data_cart(){
+			$sId = session_id();
+			$query = "DELETE FROM cart WHERE sessionID = '$sId'";
+			$result = $this->db->delete($query);
+			
+
 		}
     }
     

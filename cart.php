@@ -2,6 +2,7 @@
 include_once("inc/header.php");
 include_once("inc/top.php");
 include_once("classes/cart.php");
+include_once("classes/products.php");
 ?>
 
 <?php
@@ -78,7 +79,7 @@ include_once("classes/cart.php");
                                             </td>
 
                                             <td class="product-price ">
-                                                <span class="amount"><?php echo $fm->format_currency($result['price'])." "."VNĐ"; ?></span>
+                                                <span class="amount"><?php $sellprice = $result['price'] * (100 - $result['discount']) / 100; echo $fm->format_currency($sellprice)." "."VNĐ"; ?></span>
                                             </td>
 
                                             <td class="product-quantity">
@@ -93,7 +94,7 @@ include_once("classes/cart.php");
 
                                             <td class="product-subtotal">
                                                 <span class="amount">
-                                                    <?php $total = $result['price'] * $result['quantity'];
+                                                    <?php $total = $sellprice * $result['quantity'];
 								                    echo $fm->format_currency($total)." "."VNĐ"; ?></span>
                                             </td>
                                         </tr>

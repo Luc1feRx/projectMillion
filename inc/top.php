@@ -3,8 +3,8 @@
     $check_cart = $cart->check_cart();
 		if($check_cart){
             if(isset($_GET['add-to-cart'])){
-                $sum = Session::get("sums");
-                $qty = Session::get("qtys");
+                $sum = Session::get("sumss");
+                $qty = Session::get("qtyss");
             }else{
                 $sum = Session::get("sum");
                 $qty = Session::get("qty");
