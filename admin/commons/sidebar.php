@@ -159,7 +159,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/SellLaptops/admin/sliderlist.php" class="nav-link">
+                <a href="/SellLaptops/admin/orderlist.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh Sách Đơn Hàng</p>
                 </a>

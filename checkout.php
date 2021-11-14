@@ -141,6 +141,20 @@
                                                     <input type="text" name="total_money" value="<?php echo $subtotal + $vat; ?>" hidden>
                                                 </td>
                                             </tr>
+                                            
+                                            <div style="display: flex; justify-content: space-around;">
+
+                                            <div class="form-row place-order" style="display: flex;">
+                                                <input type="submit" name="submit" value="Đặt Hàng" id="place_order" class="button alt">
+                                            </div>
+
+                                            <div class="clear"></div>
+
+                                            <div class="form-row place-order" style="background: none repeat scroll 0 0 #5a88ca; border: medium none; padding: 11px 20px; text-transform: uppercase;">
+                                                    <a style="text-decoration: none; color: #fff !important;" class="button alt" href="index.php">Tiếp tục mua hàng</a>
+                                            </div>
+                                            </div>
+                                            </br></br>
                                             <?php
                                                 }else{
                                                     echo '<div class = "alert alert-warning">Your Cart is Empty ! Please Shopping Now</div>';
@@ -149,20 +163,6 @@
 
                                         </tbody>
                                     </table>
-
-
-                                    <div style="display: flex; justify-content: space-around;">
-
-                                        <div class="form-row place-order" style="display: flex;">
-                                            <input type="submit" name="submit" value="Đặt Hàng" id="place_order" class="button alt">
-                                        </div>
-
-                                        <div class="clear"></div>
-
-                                        <div class="form-row place-order" style="background: none repeat scroll 0 0 #5a88ca; border: medium none; padding: 11px 20px; text-transform: uppercase;">
-                                                <a style="text-decoration: none; color: #fff !important;" class="button alt" href="index.php">Tiếp tục mua hàng</a>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
 

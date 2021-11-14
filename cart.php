@@ -21,6 +21,13 @@ include_once("classes/products.php");
     }
 ?>
 
+<?php
+	if(!isset($_GET['id']) || isset($_POST['submit'])){
+		echo "<meta http-equiv='refresh' content='0;URL=?id=live'>";
+	}
+
+?>
+
 <div class="product-big-title-area">
     <div class="container">
         <div class="row">
@@ -86,7 +93,7 @@ include_once("classes/products.php");
                                                 <div class="quantity buttons_added">
                                                 <form action="" method="post">
                                                     <input type="hidden" name="cartId" value="<?php echo $result['cartId'] ?>"/>
-                                                    <input type="number" name="quantity" min="0"  value="<?php echo $result['quantity'] ?>"/>
+                                                    <input type="number" name="quantity" min="0" value="<?php echo $result['quantity'] ?>"/>
                                                     <input type="submit" name="submit" value="Update"/>
                                                 </form>
                                                 </div>
