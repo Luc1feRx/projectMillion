@@ -78,5 +78,11 @@
 			$result = $this->db->select($query);
 			return $result;
 		}
+
+		public function show_statistical(){
+			$query = "SELECT category.id, category.name, COUNT(*) as 'soluong', MAX(product.price) as 'giacao', MIN(product.price) as 'giathap', AVG(product.price) as 'giatb' FROM category, product WHERE product.cate_id = category.id GROUP BY category.id, category.name";
+			$result = $this->db->select($query);
+			return $result;
+		}
 	}
 ?>
