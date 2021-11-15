@@ -59,5 +59,24 @@
                 return $alert;
             }
 		}
+
+		public function show_list_order(){
+			$query = "SELECT * FROM `order` order by id desc";
+			$result = $this->db->select($query);
+			return $result;
+		}
+
+
+		public function show_order_detail($id){
+			$query = "SELECT order_detail.*, product.name, product.image from product, order_detail where product.id = order_detail.product_id AND order_detail.id = '$id'";
+			$result = $this->db->select($query);
+			return $result;
+		}
+
+		public function show_list_order_customer($id){
+			$query = "SELECT * FROM `order` where id = '$id'";
+			$result = $this->db->select($query);
+			return $result;
+		}
 	}
 ?>

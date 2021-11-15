@@ -130,8 +130,44 @@
 			$sId = session_id();
 			$query = "DELETE FROM cart WHERE sessionID = '$sId'";
 			$result = $this->db->delete($query);
-			
+		}
 
+		public function shifted($id,$time,$total_money){
+			$id = mysqli_real_escape_string($this->db->connect, $id);
+			$time = mysqli_real_escape_string($this->db->connect, $time);
+			$total_money = mysqli_real_escape_string($this->db->connect, $total_money);
+			$query = "UPDATE `order` SET
+
+					status = '1'
+
+					WHERE id = '$id' AND date_order='$time' AND total_money ='$total_money'";
+			$result = $this->db->Update($query);
+			if($result){
+				$msg = "<span class='success'>Update Order Successfully</span>";
+				return $msg;
+			}else{
+				$msg = "<span class='error'>Update Order Not Successfully</span>";
+				return $msg;
+			}
+		}
+
+		public function del_shifted($id,$time,$price){
+			$id = mysqli_real_escape_string($this->db->connect, $id);
+			$time = mysqli_real_escape_string($this->db->connect, $time);
+			$price = mysqli_real_escape_string($this->db->connect, $price);
+			$query = "DELETE FROM `order` 
+					WHERE id = '$id' AND date_order='$time' AND total_money ='$price'";
+			$result = $this->db->Delete($query);
+
+			$sql = "DELETE FROM order_detail WHERE order_id = '$id'";
+			$result1 = $this->db->Delete($sql);
+			if($result){
+				$msg = "<span class='success'>Detele Order Successfully</span>";
+				return $msg;
+			}else{
+				$msg = "<span class='error'>Delete Order Not Successfully</span>";
+				return $msg;
+			}
 		}
     }
     

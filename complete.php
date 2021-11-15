@@ -38,6 +38,7 @@
 			<h1 style="color: #5a88ca">BẠN ĐÃ ĐẶT HÀNG THÀNH CÔNG!!!</h1>
 			<h4>Cảm ơn quý khách đã đặt mua sản phẩm của cửa hàng chúng tôi!</h4>
             <h4>Đơn hàng của quý khách đã được gửi đến email của bạn và sẽ giao hàng trong thời gian sớm nhất.</h4>
+            <h4>Chúc quý khách một ngày tốt lành.</h4>
 		</div>
 	</div>
 </div>
@@ -50,7 +51,7 @@
     
     echo "<script>setTimeout(function(){
         window.location = 'index.php'
-    }, 5000)</script>"; //tương ứng 5 giây
+    }, 4000)</script>"; //tương ứng 4 giây
 ?>
 
 <?php include 'inc/footer.php';?>

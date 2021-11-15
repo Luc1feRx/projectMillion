@@ -111,21 +111,20 @@ include_once("classes/products.php");
                                         $subtotal += $total;
                                         $qty = $qty + $result['quantity'];
                                         }
+
+                                        echo "<td class='actions' colspan='6'>
+                                        <div class='row' style='display: flex;'>
+                                            <div class='col-md-6' style='display: flex; justify-content: center;'>
+                                                <input type='text' placeholder='Coupon code' id='coupon_code' class='input-text' name='coupon_code'>
+                                                <input type='submit' value='Apply Coupon' name='apply_coupon' class='button'>
+                                            </div>
+                                            <div class='col-md-6' style='display: flex; align-items: center; justify-content: center;'>
+                                                <a class='btn btn-primary' href='checkout.php' >Đặt hàng</a>
+                                                </div>
+                                        </div>
+                                    </td>";
                                     }
                                     ?>
-                                        <td class="actions" colspan="6">
-                                            <div class="row" style="display: flex;">
-                                                <!-- <label >Coupon:</label> -->
-                                                <div class="col-md-6" style="display: flex; justify-content: center;">
-                                                    <input type="text" placeholder="Coupon code " value="" id="coupon_code" class="input-text" name="coupon_code">
-                                                    <input type="submit" value="Apply Coupon" name="apply_coupon" class="button">
-                                                </div>
-                                                <div class="col-md-6" style="display: flex; align-items: center; justify-content: center;">
-                                                    <a class="btn btn-primary" href="checkout.php" >Đặt hàng</a>
-                                                    </div>
-                                            </div>
-                                            <!-- <input type="submit" value="CheckOut" name="check_out" class="button"> -->
-                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
