@@ -11,10 +11,12 @@ include_once ("classes/category.php");
                     $product = new product();
                     $brand = new brand();
                     $category = new category();
+                    $cart = new cart();
                     $resultSearch = $product->getListBySearch($keyword);
                     // var_dump($resultSearch);
                     if($resultSearch){
             ?>
+
 
 
 <div class="single-product-area">
@@ -59,5 +61,14 @@ include_once ("classes/category.php");
         color: black
     }
 </style>
+
+<?php
+                        if(isset($_GET['add-to-cart'])){
+                            $id = $_GET['add-to-cart'];
+                            $quantity = 1;
+                            $addtocart = $cart->add_cart($quantity,$id);
+                            echo "<meta http-equiv='refresh' content='0;URL=cart.php'>";
+                        }
+?>
 
 <?php include_once("inc/footer.php"); ?>

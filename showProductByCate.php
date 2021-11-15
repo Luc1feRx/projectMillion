@@ -15,6 +15,7 @@
                         $id = $_GET['add-to-cart'];
                         $quantity = 1;
                         $addtocart = $cart->add_cart($quantity,$id);
+                        echo "<meta http-equiv='refresh' content='0;URL=cart.php'>";
                     }
                     foreach ($cateList as $category){
                 ?>

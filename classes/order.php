@@ -39,17 +39,17 @@
 					$quantity = $result1['quantity'];
 					$price = $result1['price'] * $quantity;
 					$image = $result1['image'];
+					$query1 = "select id from `order` where fullname = '$fullname'";
+					$get_order = $this->db->Select($query1);
+					if($get_order){
+						while($result = $get_order->fetch_assoc()){
+							$orderid = $result['id'];
+							$sql1 = "INSERT INTO order_detail (order_id, product_id, price, quantity, total_money) VALUES ('$orderid','$productid','$price','$quantity','$total_money')";
+							$set_order_details = $this->db->Insert($sql1);
+						}
+					}
 				}
 			}
-			$query1 = "select id from `order` where fullname = '$fullname'";
-			$get_order = $this->db->Select($query1);
-			if($get_order){
-				while($result = $get_order->fetch_assoc()){
-					$orderid = $result['id'];
-				}
-			}
-			$sql1 = "INSERT INTO order_detail (order_id, product_id, price, quantity, total_money) VALUES ('$orderid','$productid','$price','$quantity','$total_money')";
-			$set_order_details = $this->db->Insert($sql1);
 
             if($set_order){
                 $alert = "<div class='btn btn-success'>Đặt Hàng Thành Công</div>";
@@ -68,7 +68,7 @@
 
 
 		public function show_order_detail($id){
-			$query = "SELECT order_detail.*, product.name, product.image from product, order_detail where product.id = order_detail.product_id AND order_detail.id = '$id'";
+			$query = "SELECT order_detail.*, product.name, product.image from product, order_detail where product.id = order_detail.product_id AND order_detail.order_id = '$id'";
 			$result = $this->db->select($query);
 			return $result;
 		}
