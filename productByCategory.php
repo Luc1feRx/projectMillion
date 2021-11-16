@@ -62,6 +62,15 @@ if (isset($_GET['cate']) && is_numeric($_GET['cate'])) {
     </div>
 </div>
 
+<?php
+                        if(isset($_GET['add-to-cart'])){
+                            $id = $_GET['add-to-cart'];
+                            $quantity = 1;
+                            $addtocart = $cart->add_cart($quantity,$id);
+                            echo "<meta http-equiv='refresh' content='0;URL=cart.php'>";
+                        }
+?>
+
 
 <?php
 include_once("inc/footer.php");

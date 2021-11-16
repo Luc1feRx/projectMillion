@@ -5,6 +5,15 @@ include_once ("classes/brand.php");
 include_once ("classes/category.php");
 ?>
 
+<style>
+	
+	.not_found {
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+}
+</style>
+
 <?php
                 if (isset($_GET['search_key']) && !empty($_GET['search_key'])) {
                     $keyword = $_GET['search_key'];
@@ -48,7 +57,9 @@ include_once ("classes/category.php");
                 <?php endforeach; ?>
             <?php  
             }else{
-                echo"ko tim thay";
+                echo"<div class='container'><div class='not_found'>
+                <h3>Không Có Sản Phẩm Nào</h3>
+            </div></div>";
             }
             }
             

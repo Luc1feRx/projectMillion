@@ -186,8 +186,8 @@ include_once ("classes/category.php");
                 // } 
                 ?>
                 <form action="" style="width: 100%;" method="POST">
-                    <p><input type="hidden" style="width: 100%;" value="<?php echo $id ?>" name="product_id_binhluan"></p>
-                    <p><input type="text" style="width: 100%;" placeholder="Điền tên" class="form-control" name="tennguoibinhluan"></p>
+                    <p><input type="text" style="width: 100%;" placeholder="Điền tên" class="form-control" name="nameuser"></p>
+                    <p><input type="email" style="width: 100%;" placeholder="Điền Email" class="form-control" name="email"></p>
                     <p><textarea rows="5" style="width: 100%;" style="resize: none;" placeholder="Bình luận...." class="form-control" name="binhluan"></textarea></p>
                     <p><input type="submit" style="width: 100%;" name="binhluan_submit" class="btn btn-success" value="Gửi bình luận"></p>
                 </form>
@@ -197,6 +197,21 @@ include_once ("classes/category.php");
 
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            setInterval(function(){
+                $.ajax({
+                    url: 'comment_list.php',
+                    success:function(data){
+                        
+                    }
+                });
+            }, 4000);
+        });
+    </script>
 </div>
 
 <?php include_once("inc/footer.php"); ?>
