@@ -87,6 +87,37 @@
             }
         }
 
+        function getProductByFilter($conditions, $sort)
+        {
+            $sortsql = '';
+            if ($conditions == '') $conditions = 1;
+            switch ($sort) {
+                case 'new':
+                    $sortsql = 'time_add DESC';
+                    break;
+                case 'giam':
+                    $sortsql = 'price ASC';
+                    break;
+                case 'tang':
+                    $sortsql = 'price DESC';
+                    break;
+                case 'dis_max':
+                    $sortsql = 'discount DESC';
+                    break;
+                case 'topsell':
+                    $sortsql = 'selled  DESC';
+                    break;
+    
+                default:
+                    $sortsql = 'id desc';
+                    break;
+            }
+    
+            $query = "SELECT * FROM " . "product" . ' WHERE ' . $conditions . " ORDER BY " . $sortsql;
+			$result = $this->db->Select($query);
+			return $result;
+        }
+
         public function show_products(){
 			$query = "SELECT * FROM product order by id desc";
 			$result = $this->db->Select($query);

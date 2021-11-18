@@ -79,11 +79,11 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.php">Home</a></li>
-                        <li><a href="shop.html">TẤT CẢ SẢN PHẨM</a></li>
+                        <li><a href="shop.php">TẤT CẢ SẢN PHẨM</a></li>
                         <li><a href="single-product.html">DANH MỤC SẢN PHẨM</a></li>
                         <li><a href="cart.html">HÃNG SẢN XUẤT</a></li>
                         <li><a href="checkout.html">TIN TỨC</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="contract.php">Contact</a></li>
                     </ul>
                 </div>  
             </div>

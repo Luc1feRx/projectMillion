@@ -18,72 +18,38 @@
 			$this->db = new Database();
 			$this->fm = new Format();
 		}
-		public function insert_binhluan(){
-			$product_id = $_POST['product_id_binhluan'];
-			$tenbinhluan = $_POST['tennguoibinhluan'];
-			$binhluan = $_POST['binhluan'];
-			if($tenbinhluan=='' || $binhluan==''){
+		public function insert_binhluan($data,$id){
+			$name = mysqli_real_escape_string($this->db->connect, $data['nameuser']);
+			$email = mysqli_real_escape_string($this->db->connect, $data['email']);
+			$comment = mysqli_real_escape_string($this->db->connect, $data['comment']);
+			$comment_date = date('Y-m-d H:i:s');
+			if($name=='' || $email==''|| $comment==''){
 				$alert = "<span class='error'>Không để trống các trường</span>";
 				return $alert;
 			}else{
-				$query = "INSERT INTO tbl_binhluan(tenbinhluan,binhluan,product_id) VALUES('$tenbinhluan','$binhluan','$product_id')";
-					$result = $this->db->insert($query);
+				$q = "INSERT INTO feedback (nameuser,email,comment,comment_date, product_id) VALUES('".$name."','".$email."','".$comment."','".$comment_date."','".$id."')";
+					$result = $this->db->insert($q);
 					if($result){
-						$alert = "<span class='success'>Bình luận đã gửi</span>";
+						$alert = "<span class='btn btn-success' style='font-size: 14px ;'>Bình luận đã gửi</span>";
 						return $alert;
 					}else{
-						$alert = "<span class='error'>Bình luận không thành công</span>";
+						$alert = "<span class='btn btn-error' style='font-size: 14px ;'>Bình luận không thành công</span>";
 						return $alert;
 				}
 			}
 		}
-		public function del_comment($id){
-			$query = "DELETE FROM tbl_binhluan where binhluan_id = '$id'";
-			$result = $this->db->delete($query);
-			if($result){
-				$alert = "<span class='success'>Xóa bình luận thành công</span>";
-				return $alert;
-			}else{
-				$alert = "<span class='error'>Xóa bình luận không thành công</span>";
-				return $alert;
-			}
-		}
-		public function show_comment(){
-			$query = "SELECT * FROM tbl_binhluan order by binhluan_id desc";
+		public function show_comment($id){
+			$query = "SELECT * FROM feedback where product_id = '$id' and status = 1 order by id desc";
 			$result = $this->db->select($query);
 			return $result;
 		}
-		public function insert_customers($data){
-			$name = mysqli_real_escape_string($this->db->link, $data['name']);
-			$city = mysqli_real_escape_string($this->db->link, $data['city']);
-			$zipcode = mysqli_real_escape_string($this->db->link, $data['zipcode']);
-			$email = mysqli_real_escape_string($this->db->link, $data['email']);
-			$address = mysqli_real_escape_string($this->db->link, $data['address']);
-			$country = mysqli_real_escape_string($this->db->link, $data['country']);
-			$phone = mysqli_real_escape_string($this->db->link, $data['phone']);
-			$password = mysqli_real_escape_string($this->db->link, md5($data['password']));
-			if($name=="" || $city=="" || $zipcode=="" || $email=="" || $address=="" || $country=="" || $phone =="" || $password ==""){
-				$alert = "<span class='error'>Fields must be not empty</span>";
-				return $alert;
-			}else{
-				$check_email = "SELECT * FROM tbl_customer WHERE email='$email' LIMIT 1";
-				$result_check = $this->db->select($check_email);
-				if($result_check){
-					$alert = "<span class='error'>Email Already Existed ! Please Enter Another Email</span>";
-					return $alert;
-				}else{
-					$query = "INSERT INTO tbl_customer(name,city,zipcode,email,address,country,phone,password) VALUES('$name','$city','$zipcode','$email','$address','$country','$phone','$password')";
-					$result = $this->db->insert($query);
-					if($result){
-						$alert = "<span class='success'>Customer Created Successfully</span>";
-						return $alert;
-					}else{
-						$alert = "<span class='error'>Customer Created Not Successfully</span>";
-						return $alert;
-					}
-				}
-			}
+
+		public function show_list_comment(){
+			$query = "SELECT feedback.*, product.name FROM feedback, product where feedback.product_id = product.id order by id desc";
+			$result = $this->db->select($query);
+			return $result;
 		}
+		
 		public function login_customers($data){
 			$email = mysqli_real_escape_string($this->db->link, $data['email']);
 			$password = mysqli_real_escape_string($this->db->link, md5($data['password']));
@@ -136,7 +102,35 @@
 			}
 		}
 		
-		
+		public function approved($id){
+			$id = mysqli_real_escape_string($this->db->connect, $id);
+			$query = "UPDATE feedback SET
+
+					status = '1'
+
+					WHERE id = '$id'";
+			$result = $this->db->Update($query);
+			if($result){
+				$msg = "<span class='success'>Update Feedback Successfully</span>";
+				return $msg;
+			}else{
+				$msg = "<span class='error'>Update Feedback Not Successfully</span>";
+				return $msg;
+			}
+		}
+
+		public function del_comment($id){
+			$id = mysqli_real_escape_string($this->db->connect, $id);
+			$query = "DELETE FROM feedback WHERE id = '$id'";
+			$result = $this->db->Delete($query);
+			if($result){
+				$msg = "<span class='success'>Detele Feedback Successfully</span>";
+				return $msg;
+			}else{
+				$msg = "<span class='error'>Delete Feedback Not Successfully</span>";
+				return $msg;
+			}
+		}
 
 
 	}
