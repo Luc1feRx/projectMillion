@@ -58,7 +58,7 @@ if (isset($conditions) && isset($_SESSION['condition'])) {
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img width="300" height="300" alt="IMG" class="shop_thumbnail" src="<?php echo 'admin/product/uploads/' ?>" alt="<?php echo $product['name'] ?>">
+                            <img width="300" height="300" alt="IMG" class="shop_thumbnail" src="<?php echo 'admin/uploads/' . $product['image'] ?>" alt="<?php echo $product['name'] ?>">
                         </div>
                         <h2><a href="single-product.php?product_id=<?php echo $product['id']; ?>"><?php echo $product['name'] ?></a></h2>
                         <div class="product-carousel-price">
@@ -82,10 +82,10 @@ if (isset($conditions) && isset($_SESSION['condition'])) {
                 $rows = $db->Select('select count(*) as count  from product WHERE ' . $_SESSION['condition']);
                 
             } else {
-                $row = $db->Select('select count(*) as count  from product');
+                $rows = $db->Select('select count(*) as count  from product');
             }
 
-            foreach ($row as $r) {
+            foreach ($rows as $r) {
                 $allRows = $r['count'];
             }
             $pageTotal = ceil($allRows / $count); //11/5 = 2.2 xấp xỉ 3 -> 2 trang

@@ -131,8 +131,6 @@
                             <td>
                                 <a href="productsupdate.php?id=<?php echo $result['id'] ?>" class="btn btn-warning m-1"><i class="far fa-pen-square"></i></a>
                                 <a onclick = "return confirm('Bạn có muốn xóa không?')" href="?deleteid=<?php echo $result['id'] ?>" class="btn btn-danger m-1"><i class="fad fa-trash"></i></a>
-                                <!-- <a class="btn btn-danger" href="?action=delete&id=<?php echo $result['id']; ?>">Xoá</a>
-                                <a class="btn btn-warning" href="edit.php?id=<?php echo $result['id'] ?>">Xem-Sửa</a> -->
                             </td>
                         </tr>
                         <?php 
