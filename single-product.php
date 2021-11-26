@@ -22,6 +22,7 @@ include_once ("classes/comment.php");
         $quantity = $_POST['quantity'];
         $addtocart = $cart->add_to_cart($quantity, $id);
     }
+
     if(isset($_POST['binhluan_submit'])){
     	$binhluan_insert = $cus->insert_binhluan($_POST, $id);
     }
@@ -88,7 +89,7 @@ include_once ("classes/comment.php");
                                     if(isset($addtocart)){
                                         echo $addtocart;
                                     }
-                                ?>	
+                                ?>
                         </br></br>
                                 <div role="tabpanel">
                                     <ul class="product-tab" role="tablist">
@@ -180,6 +181,13 @@ include_once ("classes/comment.php");
                     <?php endforeach;?>
                 </div>
                 <div class="row">
+
+                <?
+        if(isset($_POST['add-to-cart'])){
+            echo "<meta http-equiv='refresh' content='0;URL=single-product.php?product_id=$id'>";
+        }
+    
+?>
 			
 			
 			

@@ -8,7 +8,6 @@
         $_SESSION['alert'] = '';
         foreach ($_POST as $key => $value){ //duyet cac phan tu trong form voi phuong thuc post
             if ($key != 'sort' && $value != '') {
-                var_dump($_POST);
                 $filters[$key] = $value;
             }
         }

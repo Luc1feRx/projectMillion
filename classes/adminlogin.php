@@ -35,6 +35,7 @@
                     $row = $result->fetch_assoc();
                     Session::set('adminlogin', true);
                     Session::set('id', $row['id']);
+                    Session::set('role_id', $row['role_id']);
                     Session::set('username', $row['username']);
                     Session::set('fullname', $row['fullname']);
                     header('location:index.php');

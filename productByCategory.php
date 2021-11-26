@@ -39,6 +39,7 @@ if (isset($_GET['cate']) && is_numeric($_GET['cate'])) {
             <label for="check"></label>
             </div>
         </form>
+            <?php if($list){ ?>
             <?php foreach ($list as $product) { ?>
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
@@ -58,6 +59,11 @@ if (isset($_GET['cate']) && is_numeric($_GET['cate'])) {
                 </div>
 
             <?php  } ?>
+            <?php  
+        } else{
+            echo '<div class = "alert alert-warning">Chưa Sản Phẩm Nào</div>';
+        } 
+        ?>
         </div>
     </div>
 </div>

@@ -33,6 +33,7 @@
                         </div>
                         <div class="product-content">
                             <div class="product-carousel">
+                                <?php if($listProducts){ ?>
                             <?php foreach($listProducts as $item):?>
                                 <div class="single-product">
                                     <div class="product-f-image">
@@ -60,6 +61,11 @@
                                     </div>
                                 </div>
                                 <?php endforeach;?>
+                                <?php }else{ 
+                                    echo '<div class="alert alert-warning">Chưa có sản phẩm</div>';
+                                }
+
+                                ?>
                             </div>
                         </div>
                     </div>

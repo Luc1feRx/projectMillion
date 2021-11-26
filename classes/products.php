@@ -187,7 +187,7 @@
                 }
                 move_uploaded_file($file_temp,$uploaded_image);
 
-                $sql = "update product set name = '$productName', price = '$price',brand_id = '$brand_id',short_desc='$short_desc',status='$status',model='$model',chip='$chip',ram='$ram',card='$card',drive='$drive',display='$display',connect='$connect',vantay='$vantay',operation='$operation',pin='$pin',weight='$weight',discount='$discount', quantity_product='$quantity_product', image='$unique_image' where id = '$id'";
+                $sql = "update product set name = '$productName', price = '$price',brand_id = '$brand_id', cate_id = '$cate_ids',short_desc='$short_desc',status='$status',model='$model',chip='$chip',ram='$ram',card='$card',drive='$drive',display='$display',connect='$connect',vantay='$vantay',operation='$operation',pin='$pin',weight='$weight',discount='$discount', quantity_product='$quantity_product', image='$unique_image' where id = '$id'";
                 $result = $this->db->Update($sql);
     
                 $select = "SELECT id FROM product_details where product_id = '$id'";

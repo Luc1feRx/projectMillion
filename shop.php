@@ -54,8 +54,9 @@ if (isset($conditions) && isset($_SESSION['condition'])) {
             <?php if (isset($_SESSION['alert']) && $_SESSION['alert'] != '')
                 echo '<div class="alert alert-primary" role="alert">' . 'Két quả lọc  cho : ' . $_SESSION['alert'] . '</div>';
             ?>
+            <?php if($listProducts){ ?>
             <?php foreach ($listProducts as $product): ?>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
                             <img width="300" height="300" alt="IMG" class="shop_thumbnail" src="<?php echo 'admin/uploads/' . $product['image'] ?>" alt="<?php echo $product['name'] ?>">
@@ -72,6 +73,11 @@ if (isset($conditions) && isset($_SESSION['condition'])) {
                     </div>
                 </div>
                 <?php endforeach; ?>
+                <?php } else{
+                    echo '<div class="alert alert-warning">Không có sản phẩm nào!!</div>';
+                }
+                
+                ?>
         </div>
 
         <!-- show pagecontrol -->

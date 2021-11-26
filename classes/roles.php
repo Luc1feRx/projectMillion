@@ -43,6 +43,11 @@
             return $result;
         }
 
+        public function show_role(){
+            $sql = "select * from roles";
+            $result = $this->db->Select($sql);
+            return $result;
+        }
         
         public function getrolesbyId($id){
 			$query = "SELECT * FROM roles where id = '$id'";

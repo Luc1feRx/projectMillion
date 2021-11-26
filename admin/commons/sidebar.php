@@ -1,9 +1,10 @@
+
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/SellLaptops/admin/index.php" class="brand-link">
       <img src="/SellLaptops/admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Admin</span>
+      <span class="brand-text font-weight-light">Nhóm 6</span>
     </a>
 
     <!-- Sidebar -->
@@ -18,7 +19,7 @@
         </div>
       </div>
 
-       <div class="form-inline">
+       <!-- <div class="form-inline">
         <div class="input-group" data-widget="sidebar-search">
           <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
           <div class="input-group-append">
@@ -27,12 +28,11 @@
             </button>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          
           <li class="nav-item">
             <a href="#" class="nav-link">
             <i class="nav-icon fas fa-archive"></i>
@@ -81,30 +81,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                Quản Lý Sản Phẩm
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/SellLaptops/admin/productsadd.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Thêm Sản Phẩm</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/SellLaptops/admin/productslist.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Danh Sách Sản Phẩm</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
+            <i class="nav-icon fab fa-slideshare"></i>
               <p>
                 Quản Lý Slider
                 <i class="fas fa-angle-left right"></i>
@@ -127,7 +104,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
+            <i class="nav-icon fad fa-users-crown"></i>
               <p>
                 Quản Lý Người Dùng
                 <i class="fas fa-angle-left right"></i>
@@ -135,15 +112,49 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/SellLaptops/admin/slideradd.php" class="nav-link">
+                <a href="/SellLaptops/admin/accountadd.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm Người Dùng</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/SellLaptops/admin/sliderlist.php" class="nav-link">
+                <a href="/SellLaptops/admin/accountlist.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh Sách Người Dùng</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="/SellLaptops/admin/statistical.php" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Thống Kế
+              </p>
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Quản Lý Sản Phẩm
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/SellLaptops/admin/productsadd.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm Sản Phẩm</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/SellLaptops/admin/productslist.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh Sách Sản Phẩm</p>
                 </a>
               </li>
             </ul>
@@ -151,7 +162,7 @@
           
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
+            <i class="nav-icon fab fa-jedi-order"></i>
               <p>
                 Quản Lý Đơn Hàng
                 <i class="fas fa-angle-left right"></i>
@@ -169,7 +180,7 @@
 
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
+            <i class="nav-icon fas fa-comments-alt-dollar"></i>
               <p>
                 Quản Lý Phản Hồi
                 <i class="fas fa-angle-left right"></i>
@@ -187,7 +198,7 @@
 
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
+            <i class="nav-icon fas fa-person-dolly-empty"></i>
               <p>
                 Quản Lý Nhân Viên
                 <i class="fas fa-angle-left right"></i>
@@ -212,7 +223,7 @@
 
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
+            <i class="nav-icon fad fa-user-tag"></i>
               <p>
                 Quản Lý Quyền
                 <i class="fas fa-angle-left right"></i>
@@ -233,15 +244,6 @@
                 </a>
               </li>
             </ul>
-          </li>
-
-          <li class="nav-item">
-            <a href="/SellLaptops/admin/statistical.php" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Thống Kế
-              </p>
-            </a>
           </li>
         </ul>
       </nav>

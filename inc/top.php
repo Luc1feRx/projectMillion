@@ -42,7 +42,7 @@
                 <div class="primary-header">
                     <div class="header-img-logo">
                         <div class="logo">
-                            <h1><a href="./"><img src="./img/20ec5516886f959dbd7091edbc61f96b.jpg"></a></h1>
+                            <h1><a href="./"><img src="./img/Batman-Logo-png-hd.png"></a></h1>
                         </div>
                     </div>
     

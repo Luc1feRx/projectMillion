@@ -5,7 +5,7 @@
 ?>
 
 <?php
-    $account = new Account();
+    $account = new account();
     if(isset($_GET['deleteid'])){
         $id = $_GET['deleteid'];
         $deleteaccount = $account->delete_account($id);
@@ -39,14 +39,15 @@
                             </thead>
                             <tbody>
                             <?php
+                                $index = 0;
                                 $show_account = $account->show_list_account();
                                 if($show_account == true){
-                                    $index = 0;
+                                    
                                     while ($result = $show_account->fetch_assoc()){
                                         $id = $result['id'];
                                         $fullname = $result['fullname'];
                                         $username = $result['username'];
-                                        $role_id = $result['role_id'];
+                                        $role = $result['name'];
                                         $password = $result['password'];
                                         $index++;
                             ?>
@@ -56,8 +57,8 @@
                                 <td><?php echo $fullname ?></td>
                                 <td><?php echo $username ?></td>
                                 <td><?php echo $password ?></td>
-                                <td><?php echo $role_id ?></td>
-                                <td><a href="accountupdate.php?id=<?php echo $id ?>" class="btn btn-warning"><i class="far fa-pen-square"></i></a> || <a onclick = "return confirm('Bạn có muốn xóa không?')" href="?deleteid=<?php echo $id ?>" class="btn btn-danger"><i class="fad fa-trash"></i></a></td>
+                                <td><?php echo $role ?></td>
+                                <td><a href="accountupdates.php?id=<?php echo $id ?>" class="btn btn-warning"><i class="far fa-pen-square"></i></a> || <a onclick = "return confirm('Bạn có muốn xóa không?')" href="?deleteid=<?php echo $id ?>" class="btn btn-danger"><i class="fad fa-trash"></i></a></td>
                                 </tr>
                             <?php 
                             }

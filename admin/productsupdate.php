@@ -119,7 +119,6 @@
                             if($result2['id']==$brandID){ echo 'selected';  }
                             ?> 
                             value="<?php echo $result2['id'] ?>"><?php echo $result2['name'] ?></option>
-                            <!-- <option value="<?php echo $result['id'] ?>"><?php echo $result['name'] ?></option> -->
 
                                <?php
                                   }
