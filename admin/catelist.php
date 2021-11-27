@@ -42,6 +42,7 @@
                                     $index = 0;
                                     while ($result = $show_cate->fetch_assoc()){
                                         $name = $result['name'];
+                                        $id = $result['id'];
                                         $index++;
                             ?>
 
