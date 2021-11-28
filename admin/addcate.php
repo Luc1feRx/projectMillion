@@ -4,10 +4,11 @@
 
 <?php
     $cate = new category();
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
         $cateName = $_POST['catename'];
-
         $insert_cate = $cate->insert_category($cateName);
+        
+        echo "<meta http-equiv='refresh' content='0;URL=catelist.php'>";
     }
 ?>
 

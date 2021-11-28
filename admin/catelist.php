@@ -9,6 +9,7 @@
     if(isset($_GET['deleteid'])){
         $id = $_GET['deleteid'];
         $deletecate = $cate->delete_category($id);
+        echo "<meta http-equiv='refresh' content='0;URL=catelist.php'>";
      }
     
 ?>

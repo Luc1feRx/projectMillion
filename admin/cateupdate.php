@@ -11,9 +11,10 @@
           $id = $_GET['id']; 
      }
      $cate = new category();
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
         $cateName = $_POST['catename'];
         $update_cate = $cate->update_category($cateName, $id);
+        echo "<meta http-equiv='refresh' content='0;URL=catelist.php'>";
     }
  
 ?>

@@ -4,12 +4,13 @@
 <?php include '../classes/Account.php'?>
 <?php
     $account = new account();
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])){
         $fullname = $_POST['fullname'];
         $username = $_POST['username'];
         $password = $_POST['password'];
         $role_id = $_POST['role_id'];
         $insert_account = $account->insert_account($fullname, $username, $password, $role_id);
+        echo "<meta http-equiv='refresh' content='0;URL=accountlist.php'>";
     }
 ?>
 <body>

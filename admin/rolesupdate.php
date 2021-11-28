@@ -7,7 +7,7 @@
 
 <?php
     if(!isset($_GET['id']) || $_GET['id']==NULL){
-        echo "<script>window.location ='catelist.php'</script>";
+        echo "<script>window.location ='roleslist.php'</script>";
      }else{
           $id = $_GET['id']; 
      }
@@ -15,6 +15,7 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $rolesName = $_POST['rolesName'];
         $update_roles = $roles->update_roles($rolesName, $id);
+        echo "<meta http-equiv='refresh' content='0;URL=roleslist.php'>";
     }
  
 ?>

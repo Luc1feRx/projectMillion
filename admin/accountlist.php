@@ -9,6 +9,7 @@
     if(isset($_GET['deleteid'])){
         $id = $_GET['deleteid'];
         $deleteaccount = $account->delete_account($id);
+        echo "<meta http-equiv='refresh' content='0;URL=accountlist.php'>";
      }
     
 ?>

@@ -25,6 +25,7 @@
                     $_POST['file'] = $realpath;
                     $update_slider = $slider->update_slider($_POST, $id);
                 }
+                echo "<meta http-equiv='refresh' content='0;URL=sliderlist.php'>";
             }
         ?>
         <h1 class="m-0">Sửa Slide</h1>

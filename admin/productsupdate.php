@@ -22,6 +22,7 @@
                         $_POST['file'] = $file;
                         $updateProduct = $products->update_product($_POST, $_FILES, $id);
                     }
+                    echo "<meta http-equiv='refresh' content='0;URL=productslist.php'>";
                 }
             ?>
 

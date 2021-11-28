@@ -9,7 +9,7 @@
     <div class="content-wrapper">
         <div class="container">
         <?php
-            if (isset($_FILES['file']) && isset($_POST['brandName'])) {
+            if (isset($_FILES['file']) && isset($_POST['brandName']) && isset($_POST['submit'])) {
                 $brand = new brand();
                 ////check file upload
                 $upload = new upload();
@@ -18,6 +18,7 @@
                     $_POST['file'] = $realpath;
                     $insert_brand = $brand->insert_brand($_POST);
                 }
+                echo "<meta http-equiv='refresh' content='0;URL=brandlist.php'>";
             }
         ?>
         <h1 class="m-0">Thêm Thương Hiệu</h1>

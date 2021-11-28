@@ -19,6 +19,7 @@
                 if(isset($_GET['deleteid'])){
                     $id = $_GET['deleteid'];
                     $deleteproducts = $products->delete_product($id);
+                    echo "<meta http-equiv='refresh' content='0;URL=productslist.php'>";
                  }
                 
                 if (isset($_GET['search']) && !empty($_GET['search'])) {
@@ -39,7 +40,6 @@
                 if(isset($deleteproducts)){
                     echo $deleteproducts;
                     unset($deleteproducts);
-                    header("location: productslist.php");
                 }
             ?>
             </br> </br>

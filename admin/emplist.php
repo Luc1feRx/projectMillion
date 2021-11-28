@@ -9,6 +9,7 @@
     if(isset($_GET['deleteid'])){
         $id = $_GET['deleteid'];
         $deleteEmp = $emp->delete_employee($id);
+        echo "<meta http-equiv='refresh' content='0;URL=emplist.php'>";
      }
     
     if (isset($_GET['page']) && is_numeric($_GET['page'])) {

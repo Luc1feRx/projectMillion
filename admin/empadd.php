@@ -8,6 +8,7 @@
         if (isset($_FILES['image']) && isset($_POST['submit'])){
             $emp = new employee();
             $insertEmp = $emp->insert_employee($_POST);
+            echo "<meta http-equiv='refresh' content='0;URL=emplist.php'>";
         }
 
 ?>

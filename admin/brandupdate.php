@@ -25,6 +25,7 @@
                     $_POST['file'] = $realpath;
                     $update_brand = $brand->update_brand($_POST, $id);
                 }
+                echo "<meta http-equiv='refresh' content='0;URL=brandlist.php'>";
             }
         ?>
         <h1 class="m-0">Sửa Thương Hiệu</h1>

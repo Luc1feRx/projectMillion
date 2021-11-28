@@ -12,6 +12,7 @@
     if(isset($_GET['deleteid'])){
      	$id = $_GET['deleteid'];
      	$del_comment = $cus->del_comment($id);
+         echo "<meta http-equiv='refresh' content='0;URL=comments_list.php'>";
     }
 ?>
 

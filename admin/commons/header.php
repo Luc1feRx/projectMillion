@@ -76,7 +76,7 @@
       ?>
       <li class="nav-item">
         <a class="nav-link" href="?action=logout" role="button">
-          <span onclick = "return confirm('Bạn có muốn Đăng Xuất không?')">Logout</span>
+          <span onclick = "return confirm('Bạn có muốn Đăng Xuất không?')">Đăng Xuất</span>
         </a>
       </li>
     </ul>

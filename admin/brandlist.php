@@ -9,6 +9,7 @@
     if(isset($_GET['deleteid'])){
         $id = $_GET['deleteid'];
         $deletebrand = $brand->delete_brand($id);
+        echo "<meta http-equiv='refresh' content='0;URL=brandlist.php'>";
      }
     
 ?>

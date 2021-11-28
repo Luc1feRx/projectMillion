@@ -15,6 +15,7 @@
             $_POST['file'] = $file;
             $insertProduct = $products->insert_product($_POST);
         }
+        echo "<meta http-equiv='refresh' content='0;URL=productslist.php'>";
     }
 ?>
 

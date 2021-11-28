@@ -14,6 +14,7 @@
 
      if (isset($_FILES['image']) && isset($_POST['submit'])){
          $updateEmp = $emp->update_employee($_POST, $id);
+         echo "<meta http-equiv='refresh' content='0;URL=emplist.php'>";
      }
 ?>
 

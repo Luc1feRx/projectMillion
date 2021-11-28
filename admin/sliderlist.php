@@ -7,6 +7,7 @@
     if(isset($_GET['deleteid'])){
         $id = $_GET['deleteid'];
         $deleteslider = $slider->delete_slider($id);
+        echo "<meta http-equiv='refresh' content='0;URL=sliderlist.php'>";
      }
     
 ?>

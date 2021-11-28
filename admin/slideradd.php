@@ -17,6 +17,7 @@
                     $_POST['file'] = $realpath;
                     $insert_slider = $slider->insert_slider($_POST);
                 }
+                echo "<meta http-equiv='refresh' content='0;URL=sliderlist.php'>";
             }
         ?>
         <h1 class="m-0">Thêm Slide</h1>

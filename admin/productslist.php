@@ -62,7 +62,7 @@
                 if(isset($deleteproducts)){
                     echo $deleteproducts;
                     unset($deleteproducts);
-                    header("location: productslist.php");
+                    echo "<meta http-equiv='refresh' content='0;URL=productslist.php'>";
                 }
             ?>
             </br> </br>

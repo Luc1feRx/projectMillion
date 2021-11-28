@@ -20,6 +20,7 @@
         $roles = $_POST['role_id'];
         $password = md5($_POST['password']);
         $update_account = $account->update_account($fullname, $username, $password, $roles, $id);
+        echo "<meta http-equiv='refresh' content='0;URL=accountlist.php'>";
     }
 ?>
 

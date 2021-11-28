@@ -9,6 +9,7 @@
     if(isset($_GET['deleteid'])){
         $id = $_GET['deleteid'];
         $deleteroles = $roles->delete_roles($id);
+        echo "<meta http-equiv='refresh' content='0;URL=roleslist.php'>";
      }
     
 ?>

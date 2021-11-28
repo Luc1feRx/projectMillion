@@ -9,6 +9,7 @@
     if(isset($_GET['deleteid'])){
         $id = $_GET['deleteid'];
         $deleteEmp = $emp->delete_employee($id);
+        echo "<meta http-equiv='refresh' content='0;URL=emplist.php'>";
      }
      if (isset($_GET['search']) && !empty($_GET['search'])) {
         $keyword = $_GET['search'];
@@ -16,7 +17,6 @@
         // var_dump($resultSearch);
         $index=0;
         if($resultSearch){
-            $index++;
 ?>
 
 <body>
@@ -63,11 +63,8 @@
                             </thead>
                             <tbody>
                             <?php
-                                $show_employee = $emp->show_list_employees();
-                                if($show_employee == true){
-                                    $index = 0;
                                     $gioitinh='';
-                                    while ($result = $show_employee->fetch_assoc()){
+                                    while ($result = $resultSearch->fetch_assoc()){
                                         $name = $result['fullname'];
                                         $id = $result['id'];
                                         $diaChi = $result['address'];
@@ -91,13 +88,11 @@
                                 <td><?php echo $email; ?></td>
                                 <td><a href="empupdate.php?id=<?php echo $id ?>" class="btn btn-warning"><i class="far fa-pen-square"></i></a> || <a onclick = "return confirm('Bạn có muốn xóa không?')" href="?deleteid=<?php echo $id ?>" class="btn btn-danger"><i class="fad fa-trash"></i></a></td>
                                 </tr>
-                            <?php 
-                            }
-                        }
-                            ?>
                             </tbody>
                         </table>
                         <?php
+                                    }
+
                     }else{
                         echo "<div class='error'>Khong Tim Thay!!</div>";
                     }

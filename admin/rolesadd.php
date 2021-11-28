@@ -10,6 +10,7 @@
         $rolesName = $_POST['rolesName'];
 
         $insert_roles = $roles->insert_roles($rolesName);
+        echo "<meta http-equiv='refresh' content='0;URL=roleslist.php'>";
     }
 ?>
 

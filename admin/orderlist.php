@@ -17,6 +17,7 @@
      	$time = $_GET['time'];
      	$price = $_GET['price'];
      	$del_shifted = $cart->del_shifted($id,$time,$price);
+        echo "<meta http-equiv='refresh' content='0;URL=orderlist.php'>";
     }
 ?>
 
