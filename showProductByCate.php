@@ -29,7 +29,9 @@
                 <div class="col-md-12">
                     <div class="latest-product">
                         <div class="section-title">
-                            <a href="productByCategory.php?cate=<?php echo $category['id'] ?>" class="section-title"><?php echo $category['name'] ?></a>
+                        <div class="neons col-12">
+                            <h2><a style="text-decoration: none;" href="productByCategory.php?cate=<?php echo $category['id'] ?>" class="section-title"><?php echo $category['name'] ?></a></h2>
+                        </div>
                         </div>
                         <div class="product-content">
                             <div class="product-carousel">

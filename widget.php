@@ -11,7 +11,9 @@ $product = new product();
             <div class="col-md-4">
 
                 <div class="single-product-widget">
-                    <h2 class="product-wid-title">Top Sellers</h2>
+                        <div class="neons col-12">
+                            <h2 class="product-wid-title">Top Sellers</h2>
+                        </div>
                     <!-- <a href="" class="wid-view-more">View All</a> -->
                     <?php
                     //get product top seller
@@ -38,7 +40,9 @@ $product = new product();
             </div>
             <div class="col-md-4">
                 <div class="single-product-widget">
+                    <div class="neons col-12">
                     <h2 class="product-wid-title">Top Views</h2>
+                    </div>
                     <!-- <a href="" class="wid-view-more">View All</a> -->
                     <?php
                     //get product top seller
@@ -64,7 +68,9 @@ $product = new product();
             </div>
             <div class="col-md-4">
                 <div class="single-product-widget">
+                <div class="neons col-12">
                     <h2 class="product-wid-title">Top New</h2>
+                    </div>
                     <!-- <a href="#" class="wid-view-more">View All</a> -->
 
                     <?php

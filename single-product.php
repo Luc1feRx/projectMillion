@@ -105,7 +105,7 @@ include_once ("classes/comment.php");
                                             $contents = $product->getContentProducts($id);
                                             foreach ($contents as  $r) { ?>
                                                 <h3><?php echo $r['title'] ?></h3>
-                                                <img height="300px" width="400px" src="<?php echo 'admin/uploads/' . $r['imgTieuDe'] ?> " alt="">
+                                                <img height="300px" width="400px" style="margin-bottom: 30px;" src="<?php echo 'admin/uploads/' . $r['imgTieuDe'] ?> " alt="">
                                                 <p><?php echo $r['content'] ?></p>
                                                 <hr>
                                             <?php } ?>
@@ -128,7 +128,7 @@ include_once ("classes/comment.php");
                                                     </tr>
                                                     <tr>
                                                         <td scope="row">Tình trạng máy</td>
-                                                        <td><?php if ($products['status'] == 0) echo 'Máy mới';
+                                                        <td><?php if ($products['status'] == 1) echo 'Máy mới';
                                                             else echo 'Máy cũ' ?></td>
                                                     </tr>
                                                     <tr>
@@ -165,10 +165,7 @@ include_once ("classes/comment.php");
                                                         <td scope="row">Trọng lượng</td>
                                                         <td><?php echo $products['weight'] . ' kg' ?></td>
                                                     </tr>
-                                                    <!-- <tr>
-                                                        <td scope="row">Đã bán</td>
-                                                        <td><?php echo $products['selled'] ?></td>
-                                                    </tr> -->
+
                                                 </tbody>
                                             </table>
                                         </div>
@@ -182,7 +179,7 @@ include_once ("classes/comment.php");
                 </div>
                 <div class="row">
 
-                <?
+                <?php
         if(isset($_POST['add-to-cart'])){
             echo "<meta http-equiv='refresh' content='0;URL=single-product.php?product_id=$id'>";
         }

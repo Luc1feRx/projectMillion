@@ -1,5 +1,5 @@
 <footer class="main-footer">
-    <strong>Copyright<a href="http://localhost:85/SellLaptops/admin/index.php"> Nhóm 6 </a></strong>
+    <strong>Copyright<a href="http://localhost:85/SellLaptops/admin/index.php"> Nhóm 5 </a></strong>
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 0.0.1 Beta
     </div>

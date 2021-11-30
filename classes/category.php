@@ -24,14 +24,27 @@
                 $alert = "<div class='error'>Category must be not empty!!</div>";
                 return $alert;
             }else{
-                $sql = "insert into category (name) values ('$cateName')";
-                $result = $this->db->Insert($sql);
-                if($result){
-                    $alert = "<div class='success'>Add Successfully!!</div>";
+                $sqle = "SELECT * FROM category";
+                $result = $this->db->select($sqle);
+                if($sqle){
+                    while($row = $result->fetch_assoc()){
+                        $ename = $row['name'];
+                    }
+                }
+
+                if($cateName == $ename){
+                    $alert = "<!! class='error'>Category name was exited!!</div>";
                     return $alert;
                 }else{
-                    $alert = "<div class='error'>Failed to add category!!</div>";
-                    return $alert;
+                    $sql = "insert into category (name) values ('$cateName')";
+                    $result = $this->db->Insert($sql);
+                    if($result){
+                        $alert = "<div class='success'>Add Successfully!!</div>";
+                        return $alert;
+                    }else{
+                        $alert = "<div class='error'>Failed to add category!!</div>";
+                        return $alert;
+                    }
                 }
 
             }
